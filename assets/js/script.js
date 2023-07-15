@@ -28,10 +28,23 @@ var localTimeHour = dayjs().hour();
 //need to add dayjs advancedFormat and use Do to get suffixes
 //https://day.js.org/docs/en/plugin/advanced-format
 var localDate = dayjs().format('dddd, MMMM D');
+var savedText9 = localStorage.getItem('txt9');
+var savedText10 = localStorage.getItem('txt10');
+var savedText11 = localStorage.getItem('txt11');
+var savedText12 = localStorage.getItem('txt12');
+var savedText13 = localStorage.getItem('txt13');
+var savedText14 = localStorage.getItem('txt14');
+var savedText15 = localStorage.getItem('txt15');
+var savedText16 = localStorage.getItem('txt16');
+var savedText17 = localStorage.getItem('txt17');
+
 console.log(localDate)
 console.log(localTimeHour)
 
 $('#currentDay').text(localDate)
+
+ 
+$('#txt9').text(savedText9)
 
 
 // $('#9').css( "border", "3px solid red" );
@@ -44,7 +57,9 @@ $('#currentDay').text(localDate)
 //if calendar > localTimeHour, addClass('future');
 for (i = 9;i<18;i++){
   if (localTimeHour > $(`#hour-${i}`).attr('value')){
-    $(`#hour-${i}`).addClass('past')
+    $(`#hour-${i}`).addClass('past'),
+    savedText[i] = localStorage.getItem(`txt${i}`);
+    $(`#txt${i}`).text(savedText[i])
   }
   else if(localTimeHour == $(`#hour-${i}`).attr('value')){
     $(`#hour-${i}`).addClass('present')
@@ -60,23 +75,39 @@ for (i = 9;i<18;i++){
 //add attribute to div by id
 // $('#hour-9').addClass('past');
 //get value from div by id
-var puppy = $('#hour-9').attr('value')
-console.log(puppy)
-//compare div attribute to number
-console.log(localTimeHour ==puppy)
+// var puppy = $('#hour-9').attr('value')
+// console.log(puppy)
+// //compare div attribute to number
+// console.log(localTimeHour ==puppy)
 
 
-//save to local storage
+
+
 
 
 // jquery click events mod5 lesson3
 //create variable for location to listen to
-var alertButtonEl = $('.porcupine');
+var button9 = $('button#btn9');
 
 //create function what to do when button is clicked  on = eventListener
-alertButtonEl.on('click', function () {
-  alert('Hello World');
+button9.on('click', function () {
+
   console.log( $(this));  //this is the jquery equivalent of event.target
   // console.log( $(this).attr("style","display:none"))  //can use $(this) to target or point to the thing that was clicked on and you can act on it,  this code will have the button not display
-});
 
+  //this console logs all of the  html text from all of the timeslots
+  // console.log($(this).attr('value')); 
+  
+  // console.log($("#txt9").text())
+
+  //get text input from text box
+  var hour9Text = $("textarea#txt9").val()
+  console.log(hour9Text)
+
+  //save to local storage
+  localStorage.setItem('txt9',hour9Text);
+
+
+  console.log($('#btn9').attr('id')); 
+
+});
