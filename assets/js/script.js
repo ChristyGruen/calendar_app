@@ -34,11 +34,28 @@ var idList = ['hour-9',"hour-10","hour-11","hour-12","hour-13","hour-14","hour-1
 //if calendar == localTimeHour, addClass('present');
 //if calendar > localTimeHour, addClass('future');
 for (i = 9;i<18;i++){
+  if (localTimeHour > $(`#hour-${i}`).attr('value')){
+    $(`#hour-${i}`).addClass('past')
+  }
+  else if(localTimeHour == $(`#hour-${i}`).attr('value')){
+    $(`#hour-${i}`).addClass('present')
+  }
+  else if(localTimeHour < $(`#hour-${i}`).attr('value')){
+    $(`#hour-${i}`).addClass('future')
+  }
+  else {
+    console.log('not during work')
+  }
   console.log(`hour-${i}`)
 }
+//add attribute to div by id
+// $('#hour-9').addClass('past');
+//get value from div by id
+var puppy = $('#hour-9').attr('value')
+console.log(puppy)
+//compare div attribute to number
+console.log(localTimeHour ==puppy)
 
-$('#hour-9').addClass('past');
 
-console.log($("#9").val)
 
 
