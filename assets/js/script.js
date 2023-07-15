@@ -22,13 +22,22 @@ $(function () {
   // TODO: Add code to display the current date in the header of the page.
 });
 
+
+
 var localTimeHour = dayjs().hour();
+//need to add dayjs advancedFormat and use Do to get suffixes
+//https://day.js.org/docs/en/plugin/advanced-format
+var localDate = dayjs().format('dddd, MMMM D');
+console.log(localDate)
 console.log(localTimeHour)
+
+$('#currentDay').text(localDate)
+
 
 // $('#9').css( "border", "3px solid red" );
 // $('#9').css( "background-color", "red" );
 //this is how to change the background color based on ID
-var idList = ['hour-9',"hour-10","hour-11","hour-12","hour-13","hour-14","hour-15","hour-16","hour-17"]
+// var idList = ['hour-9',"hour-10","hour-11","hour-12","hour-13","hour-14","hour-15","hour-16","hour-17"]
 //starting code for looping through the calendar
 //need to add an if calendar < localTimeHour, addClass('past');
 //if calendar == localTimeHour, addClass('present');
@@ -57,5 +66,17 @@ console.log(puppy)
 console.log(localTimeHour ==puppy)
 
 
+//save to local storage
 
+
+// jquery click events mod5 lesson3
+//create variable for location to listen to
+var alertButtonEl = $('.porcupine');
+
+//create function what to do when button is clicked  on = eventListener
+alertButtonEl.on('click', function () {
+  alert('Hello World');
+  console.log( $(this));  //this is the jquery equivalent of event.target
+  // console.log( $(this).attr("style","display:none"))  //can use $(this) to target or point to the thing that was clicked on and you can act on it,  this code will have the button not display
+});
 
