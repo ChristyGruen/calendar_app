@@ -35,12 +35,24 @@ THEN the saved events persist
 ![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/images/05-third-party-apis-homework-demo.gif)
 
 
-## Website Screenshot
+## Website Screenshots
+The calendar app provides the requested information and meets the specified acceptance criteria.
 
-<!-- The calendar app provides the requested information and meets the specified acceptance criteria. -->
-
+### initial page
 <!-- markdown embed image -->
-![😸 Calendar App image 😸](./assets/images/calendar_app.png)
+![😸 Initial Calendar  😸](./assets/images/calendar_start.png)
+
+### Add data to calendar
+<!-- markdown embed image -->
+![😸 Add data to Calendar 😸](./assets/images/calendar_data_entry.png)
+
+### Calendar data stored locally
+<!-- markdown embed image -->
+![😸 Calendar data stored locally 😸](./assets/images/calendar_data_storage.png)
+
+### Calendar data retrieved from local storage
+<!-- markdown embed image -->
+![😸 Calendar data retrieved after refresh  😸](./assets/images/calendar_data_retrieval.png)
 
 ## Website Link
 
